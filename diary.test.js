@@ -41,9 +41,9 @@ describe("Secret Diary", () => {
 		expect(diary.getEntries()).toBe("Buy milk"); // check the note
 	});
 
-	it("Throw an error if the padlock is close and we want to get a note", () => {
+	it("Throw an error if the padlock is close and we want to add a note", () => {
 		expect(() => {
-			diary.getEntries();
+			diary.addEntry("Buy tomatoes");
 		}).toThrow("The diary is locked !!!");
 	});
 });
