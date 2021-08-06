@@ -4,7 +4,11 @@ class Padlock {
 	}
 
 	lock(diary) {
-		diary.padlockClose = true;
+		if (diary.padlockClose === true) {
+			throw new Error("The diary is locked !!!");
+		} else {
+			diary.padlockClose = true;
+		}
 	}
 }
 
