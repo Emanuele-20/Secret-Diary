@@ -1,12 +1,3 @@
-class UnlockDiary {
-	unlock(diary) {
-		diary.padlockClose = false;
-	}
-
-	lock(diary) {
-		diary.padlockClose = true;
-	}
-}
 class SecretDiary {
 	constructor() {
 		this.padlockClose = true;
@@ -30,7 +21,7 @@ class SecretDiary {
 	}
 }
 
-module.exports = { SecretDiary, UnlockDiary };
+module.exports = SecretDiary;
 
 // CODE BEFORE CREATION OF 2 CLASSES
 

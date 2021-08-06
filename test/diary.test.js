@@ -1,8 +1,9 @@
-const { SecretDiary, UnlockDiary } = require("./diary");
+const SecretDiary = require("../src/diary");
+const Padlock = require("../src/padlock");
 
 beforeEach(() => {
 	diary = new SecretDiary();
-	lockpad = new UnlockDiary();
+	padlock = new Padlock();
 });
 
 describe("Secret Diary", () => {
@@ -15,7 +16,7 @@ describe("Secret Diary", () => {
 	});
 
 	it("Can add a new note if the padlock is open", () => {
-		lockpad.unlock(diary);
+		padlock.unlock(diary);
 		diary.addEntry("Buy milk");
 		expect(diary.notes.length).toBe(1);
 	});
@@ -33,10 +34,10 @@ describe("Secret Diary", () => {
 	});
 
 	it("Return an old note", () => {
-		lockpad.unlock(diary); // unlock diary
+		padlock.unlock(diary); // unlock diary
 		diary.addEntry("Buy milk"); // add a note
-		lockpad.lock(diary); // lock diary
-		lockpad.unlock(diary); // unlock diary
+		padlock.lock(diary); // lock diary
+		padlock.unlock(diary); // unlock diary
 		expect(diary.notes.length).toBe(1); // check the note container
 		expect(diary.getEntries()).toBe("Buy milk"); // check the note
 	});
