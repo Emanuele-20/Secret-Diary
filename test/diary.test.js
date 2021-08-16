@@ -38,7 +38,7 @@ describe("Secret Diary", () => {
 		diary.addEntry("Buy milk"); // add a note
 		padlock.lock(diary); // lock diary
 		padlock.unlock(diary); // unlock diary
-		expect(diary.notes.length).toBe(1); // check the note container
+		expect(diary.notes.length).toBe(1); // check the note container length
 		expect(diary.getEntries()).toBe("Buy milk"); // check the note
 	});
 
