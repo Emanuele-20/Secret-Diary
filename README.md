@@ -4,8 +4,8 @@ Test-drive the secret diary example:
 
 - lock
 - unlock
-- add_entry
-- get_entries
+- addEntry
+- getEntries
 
 Initially the `SecretDiary` class is locked, meaning `add_entry` and `get_entries` should throw an error.
 

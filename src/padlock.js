@@ -1,13 +1,17 @@
 class Padlock {
-	unlock(diary) {
-		diary.padlockClose = false;
+	constructor() {
+		this.close = true;
 	}
 
-	lock(diary) {
-		if (diary.padlockClose === true) {
+	unlock() {
+		this.close = false;
+	}
+
+	lock() {
+		if (this.close === true) {
 			throw new Error("The diary is locked !!!");
 		} else {
-			diary.padlockClose = true;
+			this.close = true;
 		}
 	}
 }

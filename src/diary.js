@@ -1,11 +1,14 @@
+const Padlock = require("./Padlock");
+
 class SecretDiary {
-	constructor() {
-		this.padlockClose = true;
+	constructor(padlock = new Padlock()) {
+		//dependencies injection
+		this.padlock = padlock;
 		this.notes = [];
 	}
 
 	addEntry(note) {
-		if (this.padlockClose === true) {
+		if (this.padlock.close === true) {
 			throw new Error("The diary is locked !!!");
 		} else {
 			this.notes.push(note);
@@ -13,7 +16,7 @@ class SecretDiary {
 	}
 
 	getEntries() {
-		if (this.padlockClose === true) {
+		if (this.padlock.close === true) {
 			throw new Error("The diary is locked !!!");
 		} else {
 			return this.notes.join();
