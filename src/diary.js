@@ -2,7 +2,6 @@ const Padlock = require("./Padlock");
 
 class SecretDiary {
 	constructor(padlock = new Padlock()) {
-		//dependencies injection
 		this.padlock = padlock;
 		this.notes = [];
 	}

@@ -17,7 +17,8 @@ describe("Padlock", () => {
 		padlock.lock();
 		expect(padlock.close).toBe(true);
 	});
-	xit("Throws an error if we try to lock a padlock that is already locked", () => {
+	it("Throws an error if we try to lock a padlock that is already locked", () => {
+		padlock.unlock();
 		padlock.lock();
 		expect(() => {
 			padlock.lock();
