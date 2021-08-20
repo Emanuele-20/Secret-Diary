@@ -16,7 +16,7 @@ describe("Secret Diary", () => {
 	// 		diary.addEntry("Buy Tomatoes");
 	// 	}).toThrow("The diary is locked !!!");
 	// });
-	it("dfdf", () => {
+	it("Checks if there is a call to Padlock class every time we create a new Diary", () => {
 		diario = new SecretDiary();
 		expect(Padlock).toHaveBeenCalledTimes(1);
 	});
