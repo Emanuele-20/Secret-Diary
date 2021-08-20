@@ -26,13 +26,9 @@ describe("Secret Diary", () => {
 		expect(diary.padlock.close).toBe(true);
 	});
 	it("Unlock the diary and add a note", () => {
-		console.log(diary.padlock);
-		console.log(padlock);
+		expect(diary.padlock.close).toBe(true);
 		diary.padlock.unlock();
-		console.log(diary.padlock);
-		diary.addEntry("Buy Bread");
-		expect(diary.notes.length).toBe(1);
-		//expect(diary.getEntries()).toBe("Buy Bread");
+		expect(diary.padlock.close).toBe(false);
 	});
 	it("Can locks the padlock", () => {
 		diary.padlock.unlock();
@@ -42,6 +38,11 @@ describe("Secret Diary", () => {
 		expect(() => {
 			diary.padlock.lock();
 		}).toThrow("The diary is locked !!!");
+	});
+	it("Unlock the diary, add a note and check if the note array is update", () => {
+		diary.padlock.unlock();
+		diary.addEntryes("some");
+		expect(diary.notes.length).toBe(1);
 	});
 });
 // 	 SecretDiary { padlock: Padlock { close: true }, notes: [] }
